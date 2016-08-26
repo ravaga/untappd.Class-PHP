@@ -2,6 +2,9 @@
 # Untappd.Class README
 
 ### SetUp
+
+#### **Add your api keys to config.json**
+#### **Require class**
 `<?php  require("untappd.class.php); ?>`
 
 ## Get User fields USERNAME, PREFERENCE

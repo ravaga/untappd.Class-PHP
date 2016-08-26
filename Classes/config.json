@@ -1,9 +1,9 @@
 {
     "api":
     {
-        "key":"223273EE25F5EB9DD58B228EBDF2F57036C3EAA8",
-        "secret":"EB4608AA503EEA73DF9CC1CE24AD52F7A9C2586B",
-        "callback":"http://localhost/github/untappd_Class/callback.php",
+        "key":"YOUR_CLIENT_ID",
+        "secret":"YOUR_CLIENT_SECRET",
+        "callback":"YOUR_CALLBACK",
         "url":"https://api.untappd.com/v4/"
     }
 }
