@@ -8,26 +8,27 @@
 `<?php  require("untappd.class.php); ?>`
 
 ## Get User fields USERNAME, PREFERENCE
-    * info
-    * whishlist
-    * beers
-    * badges
-    * friends
-    
-#### **example**
+    info
+    whishlist
+    beers
+    badges
+    friends
 
-` $user = Untappd::GetUser("gregavola");`
+#### Simple Get User info
+` $user = Untappd::GetUser("ravaga");`
+#### Get User's friends
+` $user = Untappd::GetUser("ravaga", "friends"); `    
     
-## Get User Friends with specific number
+## Get Specific number of Friends from User 
 ` $userFriends = Untappd::GetUserFriends("gregavola", 1); `
     
 ## Get Brewery by BREWERY_ID
 ` $brewery = Untappd::GetBrewery("1149");`
 
-## Search for Brewery by Query
-` $BrewerySearch = Untappd::BrewerySearch("brewery", 1);`
+## Search for Brewery
+` $BrewerySearch = Untappd::BrewerySearch("Stone brewery");`
     
-## Search for Beer by Query
+## Search for Beer  
 ` $beerSearch = Untappd::BeerSearch("lagunitas", 1);`
 
 ## Get Venue info by VENUE_ID
