@@ -1,0 +1,150 @@
+<html>
+    <head>
+        <title>Untappd Class Documentation</title>
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <style>
+            body
+            {
+                background:#ccc;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <div class="navbar-brand">DOCUMENTATION</div>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 panel">
+                    <div class="panel-header">
+                        <h3>SetUp</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p><b>Require php file:</b></p>
+                        <code>require("untappd.class.php");</code>
+                        <br/>
+                        <p><b>example</b></p>
+                        <pre>&#60;?php require("untappd.class.php); ?> </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 panel">
+                    <div class="panel-header">
+                        <h3>GetUser <small><i>(username, preference, compact)</i></small></h3>
+                        <p>username: <small>(string, *required)</small></p>
+                        <p>preference: <small>(string, *optional)</small> info, badged, beers, checkins, friends</p>
+                        <p>compact: <small>(string, *optional) only if passing 'info' as seccond parameter</small> true, false</p>
+                        <p>returns:<b>array</b></p>
+                    </div>
+                    <div class="panel-body">
+                        <p><b>Get user by id</b></p>
+                        <code>Untappd::GetUser("USERNAME");</code>
+                        <p><b>Get friends from user</b></p>
+                        <code>Untappd::GetUser("USERNAME", "friends");</code>
+                        <p><b>Get badges from user</b></p>
+                        <code>Untappd::GetUser("USERNAME", "badges");</code>
+                        <p><b>Get beers from user</b></p>
+                        <code>Untappd::GetUser("USERNAME", "beers");</code>
+                        <p><b>Get checkins from user</b></p>
+                        <code>Untappd::GetUser("USERNAME", "checkins");</code>
+                        <br/>
+                        <p><b>example</b></p>
+                        <pre>&#60;?php <br/> $user = Untappd:GetUser("ravaga"); <br/> echo ($user);<br/> ?></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 panel">
+                    <div class="panel-header">
+                        <h3>GetBrewery <small><i>(brewery_id, preference)</i></small></h3>
+                        <p>brewery_id: <small>(string, *required)</small></p>
+                        <p>preference: <small>(string, *optional)</small>info, checkins</p>
+                        <p>compact: <small>(string, *optional) only if passing 'info' as seccond parameter</small> true, false</p>
+                        <p>returns:<b>array</b></p>
+                    </div>
+                    <div class="panel-body">
+                        <p><b>Get brewery by id</b></p>
+                        <code>Untappd::GetBrewery("BREWERY_ID");</code>
+                        <p><b>Get checkins from brewery</b></p>
+                        <code>Untappd::GetBrewery("BREWERY_ID", "checkins");</code>
+                        <br/>
+                        <p><b>example</b></p>
+                        <pre>&#60;?php <br/> $brewery = Untappd:GetBrewery("1122"); <br/> echo ($brewery);<br/> ?></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 panel">
+                    <div class="panel-header">
+                        <h3>BrewerySearch <small><i>(keyword, limit, offset)</i></small></h3>
+                        <p>keyword: <small>(string, *required)</small></p>
+                        <p>limit: <small>(int, *optional)</small>Min 1 ~ Max 50 (default 10)</p>
+                        <p>offset: <small>(int, *optional) </small></p>
+                        <p>returns:<b>array</b></p>
+                    </div>
+                    <div class="panel-body">
+                        <p><b>Search brewery</b></p>
+                        <code>Untappd::BrewerySearch("KEYWORD");</code>
+                        <p><b>Advance Search for brewery</b></p>
+                        <code>Untappd::BrewerySearch("KEYWORD", 12, 4);</code>
+                        <br/>
+                        <p><b>example</b></p>
+                        <pre>&#60;?php <br/> $brewery = Untappd:BrewerySearch("stone brewery"); <br/> echo ($brewery);<br/> ?></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 panel">
+                    <div class="panel-header">
+                        <h3>BeerSearch <small><i>(keyword, limit, offset)</i></small></h3>
+                        <p>keyword: <small>(string, *required)</small></p>
+                        <p>limit: <small>(int, *optional)</small>Min 1 ~ Max 50 (default 10)</p>
+                        <p>offset: <small>(int, *optional) </small></p>
+                        <p>returns:<b>array</b></p>
+                    </div>
+                    <div class="panel-body">
+                        <p><b>Search for beer</b></p>
+                        <code>Untappd::BeerSearch("KEYWORD");</code>
+                        <p><b>Advance Search for beer</b></p>
+                        <code>Untappd::BeerSearch("KEYWORD", 12, 4);</code>
+                        <br/>
+                        <p><b>example</b></p>
+                        <pre>&#60;?php <br/> $beer = Untappd:BeerSearch("lagunitas"); <br/> echo ($beer);<br/> ?></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 panel">
+                    <div class="panel-header">
+                        <h3>GetVenue <small><i>(venue_id, compact)</i></small></h3>
+                        <p>venue_id: <small>(int, *required)</small></p>
+                        <p>compact: <small>(string, *optional)</small>true, false</p>
+                        <p>returns:<b>array</b></p>
+                    </div>
+                    <div class="panel-body">
+                        <p><b>Get venue by id</b></p>
+                        <code>Untappd::GetVenue("VENUE_ID");</code>
+                        <p><b>Get all info from venue</b></p>
+                        <code>Untappd::GetVenue("VENUE_ID", "false");</code>
+                        <br/>
+                        <p><b>example</b></p>
+                        <pre>&#60;?php <br/> $venue = Untappd:GetVenue("VENUE_ID"); <br/> echo ($venue);<br/> ?></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+    
+    <script type="text/javascript" src="scripts.js"></script>
+    
+</html>
